@@ -1,5 +1,6 @@
 module Api::V1
   class OrdersController < ApiController
+    before_action :authenticate_user
   def index
     @orders = Order.all
     render json: @orders

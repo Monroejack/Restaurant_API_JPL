@@ -1,4 +1,5 @@
 class Api::V1::ItemsController < Api::V1::ApiController
+  before_action :authenticate_user
   def index
     @items = Item.all
     render json: @items

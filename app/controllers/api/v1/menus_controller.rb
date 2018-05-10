@@ -1,7 +1,7 @@
 module Api::V1
 
   class MenusController < ApiController
-
+    before_action :authenticate_user
     def index
       @menus = Menu.all
       render json: @menus
